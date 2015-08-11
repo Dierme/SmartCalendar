@@ -8,7 +8,9 @@ namespace SmartCalendar
     {
         public void Configuration(IAppBuilder app)
         {
+            app.MapSignalR();
             ConfigureAuth(app);
+            
         }
     }
 }

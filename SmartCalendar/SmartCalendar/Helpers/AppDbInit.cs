@@ -39,7 +39,7 @@ namespace SmartCalendar.Helpers
             context.Events.Add(testEvent2);
             base.Seed(context);
         }
-        public AppDbInit() { this.Seed(ApplicationDbContext.Create()); }
+        public AppDbInit() {}
 
     }
 }
