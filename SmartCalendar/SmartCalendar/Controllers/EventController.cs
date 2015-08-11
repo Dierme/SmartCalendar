@@ -90,9 +90,9 @@ namespace SmartCalendar.Controllers
         }
 
         [HttpGet]
-        public HttpResponseMessage GetAll(double start, double end) 
+        public HttpResponseMessage GetAll(string userId, double start, double end) 
         {
-            var result = repository.TakeAllFromTo(start, end);
+            var result = repository.TakeAllFromTo(userId, start, end);
             return Request.CreateResponse(HttpStatusCode.OK, result);
         }
 

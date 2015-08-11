@@ -12,6 +12,7 @@
             url: '/api/event/',
             dataType: 'json',
             data: {
+                userId: $('input[name =Id]').val(),
                 start: start.getTime()/1000,
                 end: end.getTime() / 1000
             },
@@ -36,5 +37,12 @@
     },
     eventClick: function (calEvent, jsEvent, view) {
         alert('Event: ' + calEvent.title);
+    },
+    dayClick: function (date, allDay, jsEvent, view) {
+        
+        alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+        // change the day's background color just for fun
+        $(this).css('background-color', 'red');
+
     }
 });
