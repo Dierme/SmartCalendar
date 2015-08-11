@@ -88,12 +88,20 @@ namespace SmartCalendar.Models.EFRepositories
             }
         }
 
-        public IEnumerable<Event> TakeEventsFromTo(string id, DateTime start, DateTime end) 
+        public IEnumerable<Event> TakeAllFromTo(double startUnix, double endUnix) 
         {
-            var result = context.Events
-                .Where(x => x.UserId == id && x.DateStart >= start && x.DateStart <= end);
-            return result;
+            DateTime startDate = ConvertFromUnixTimestamp(startUnix);
+            DateTime endDate = ConvertFromUnixTimestamp(endUnix);
+            var result = context.Events.Where(x => x.DateStart >= startDate && x.DateStart <= endDate);
+            return context.Events;
         }
+
+        //public IEnumerable<Event> TakeEventsFromTo(string id, DateTime start, DateTime end)
+        //{
+        //    var result = context.Events
+        //        .Where(x => x.UserId == id && x.DateStart >= start && x.DateStart <= end);
+        //    return result;
+        //}
 
         private async Task<IdentityResult> SaveChangesAsync()
         {
@@ -106,6 +114,11 @@ namespace SmartCalendar.Models.EFRepositories
             {
                 return IdentityResult.Failed(e.Message);
             }
+        }
+        private static DateTime ConvertFromUnixTimestamp(double timestamp)
+        {
+            var origin = new DateTime(1970, 1, 1, 0, 0, 0, 0);
+            return origin.AddSeconds(timestamp);
         }
 
     }

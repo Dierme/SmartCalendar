@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using SmartCalendar.Models.Abstracts;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace SmartCalendar.Models
 {
@@ -28,22 +29,37 @@ namespace SmartCalendar.Models
 
     public class Event
     {
-        
+        [Key]
+        [HiddenInput(DisplayValue = false)] 
         public string Id { get; set; }
+
+        [Required]
         public string Title { get; set; }
+
+        [DataType(DataType.MultilineText)]
         public string Description { get; set; }
 
+        [Required]
+        [DataType(DataType.DateTime)]
         public DateTime DateAdd { get; set; }
 
+        [Required]
+        [DataType(DataType.DateTime)]
         public DateTime DateStart { get; set; }
 
+        [Required]
+        [DataType(DataType.DateTime)]
         public DateTime DateEnd { get; set; }
 
         public string Location { get; set; }
-        public Category Category { get; set; }
 
+        [Required]
+        public Category Category { get; set; }
+        
+        [Required]
         [ForeignKey("User")]
         public string UserId { get; set; }
+
         public ApplicationUser User { get; set; }
     }
 

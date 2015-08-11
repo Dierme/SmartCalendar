@@ -179,7 +179,6 @@
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -189,9 +188,13 @@
     <Compile Include="Migrations\201508061243164_InitialCreate.Designer.cs">
       <DependentUpon>201508061243164_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201508081536119_model.cs" />
-    <Compile Include="Migrations\201508081536119_model.Designer.cs">
-      <DependentUpon>201508081536119_model.cs</DependentUpon>
+    <Compile Include="Migrations\201508102346066_dataUpdate.cs" />
+    <Compile Include="Migrations\201508102346066_dataUpdate.Designer.cs">
+      <DependentUpon>201508102346066_dataUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508110810385_dataUpdate1.cs" />
+    <Compile Include="Migrations\201508110810385_dataUpdate1.Designer.cs">
+      <DependentUpon>201508110810385_dataUpdate1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abstracts\IRepository.cs" />
@@ -262,6 +265,10 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\qTip\jquery.qtip.css" />
+    <Content Include="Scripts\qTip\jquery.qtip.js" />
+    <Content Include="Scripts\qTip\jquery.qtip.min.css" />
+    <Content Include="Scripts\qTip\jquery.qtip.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
@@ -317,8 +324,11 @@
     <EmbeddedResource Include="Migrations\201508061243164_InitialCreate.resx">
       <DependentUpon>201508061243164_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201508081536119_model.resx">
-      <DependentUpon>201508081536119_model.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201508102346066_dataUpdate.resx">
+      <DependentUpon>201508102346066_dataUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508110810385_dataUpdate1.resx">
+      <DependentUpon>201508110810385_dataUpdate1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

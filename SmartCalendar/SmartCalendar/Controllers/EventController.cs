@@ -89,20 +89,13 @@ namespace SmartCalendar.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, result);
         }
 
-        Event GetDemoEvent()
+        [HttpGet]
+        public HttpResponseMessage GetAll(double start, double end) 
         {
-            return new Event()
-            {
-                Id = "1",
-                Title = "test",
-                Description = "test",
-                Location = "test",
-                Category = Category.Fun,
-                DateAdd = DateTime.Now,
-                DateEnd = DateTime.Now,
-                DateStart = DateTime.Now
-            };
+            var result = repository.TakeAllFromTo(start, end);
+            return Request.CreateResponse(HttpStatusCode.OK, result);
         }
+
         #region Helpers
         private HttpResponseMessage GetErrorResult(IdentityResult result)
         {
@@ -131,7 +124,7 @@ namespace SmartCalendar.Controllers
             }
 
             return null;
-        }
+        }        
         #endregion
     }
 }

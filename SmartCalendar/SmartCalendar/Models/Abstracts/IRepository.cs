@@ -13,6 +13,7 @@ namespace SmartCalendar.Models.Abstracts
         Task<IdentityResult> Remove(string id);
         Task<IdentityResult> Create(Event item);
         Task<Event> TakeEvent(string id);
+        IEnumerable<Event> TakeAllFromTo(double startUnix, double endUnix);
 
     }
 }

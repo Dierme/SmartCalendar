@@ -32,6 +32,7 @@ namespace SmartCalendar
 
             DependencyResolver.SetResolver(ninjectResolver); // MVC
             GlobalConfiguration.Configuration.DependencyResolver = ninjectResolver; // Web API
+            GlobalConfiguration.Configuration.Formatters.XmlFormatter.SupportedMediaTypes.Clear();
         }
     }
 }
